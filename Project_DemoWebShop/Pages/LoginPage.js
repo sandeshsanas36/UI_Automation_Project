@@ -15,13 +15,13 @@ class LoginPage {
     }
 
     async loginToDemoWebShop() {
-        const susername = process.env.USER;
-        const spassword = process.env.PASSWORD;
-        await this.username_txt.fill(susername);
-        await this.password_txt.fill(spassword);
+
+        await this.username_txt.fill(process.env.TEST_USER1);
+        await this.password_txt.fill(process.env.TEST_USER1_PWD);
         await this.login_btn.click();
         await expect(this.logout_btn).toBeVisible();
         console.log("✔️  Login successful with user -- Master");
+
     }
 }
 module.exports = LoginPage;

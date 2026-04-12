@@ -11,15 +11,17 @@ class basePage {
     }
 
     async navigateToDemoWebShop() {
-        const targetUrl = process.env.BASE_URL_DEMOWEBSHOP ;
-        await this.page.goto(targetUrl);
-        console.log(targetUrl)
+
+        await this.page.goto(process.env.BASE_URL_DEMOWEBSHOP);
         await expect(this.homePageTittle).toBeVisible();
         console.log("✔️  Demo Web Shop Home page Open Successfully")
     }
-        async navigateToDemoWebShopLoginPage(){
+
+    async navigateToDemoWebShopLoginPage(){
+
         await this.loginPage.click();
         console.log("✔️  Demo Web Shop Login page Open Successfully")
+
     }
 }
 module.exports = basePage;
